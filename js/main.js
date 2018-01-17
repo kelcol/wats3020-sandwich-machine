@@ -7,9 +7,17 @@
 // Provide examples where it may help (e.g. show a comma-separated list of
 // toppings to indicate how to specify toppings, etc.)
 //
+
+
+// Create a function to "decimalate numbers"
+function decimalate(x) {
+  return Number.parseFloat(x).toFixed(2);
+};
+
+
 // TODO: Prompt the user for what kind of bread they would like.
 // Ideally, that would look something like: "What kind of bread (white, wheat, flat)?"
-let breadString = prompt("What kind of bread would you like?");
+let bread = prompt("What kind of bread would you like?");
 
 // TODO: Prompt the user for what kind of meat(s) they would like.
 // Indicate they should separate multiple items with a comma:
@@ -42,6 +50,8 @@ let prices = {
     condiment: 0.25 // Each condiment costs $0.25
 };
 
+let sandwichCost = decimalate(prices.sandwich);
+
 // TODO: Convert order information from Strings to Arrays.
 
 let meatArray = meatString.split(',');
@@ -53,20 +63,19 @@ let condimentArray = condimentString.split(',');
 // and multiply out the costs. You will need to refer to the attributes of the
 // `prices` object in order to calculate these costs.
 
-let meatCost = meatArray.length() * prices.meat;
-let toppingCost = toppingArray.length() * prices.topping;
-let condimentCost = condimentArray.length() * prices.condiment;
+let meatCost = decimalate(meatArray.length * prices.meat);
+let toppingCost = decimalate(toppingArray.length * prices.topping);
+let condimentCost = decimalate(condimentArray.length * prices.condiment);
 
 // TODO: Combine the costs of each part of the sandwich to get the subtotal.
-let subtotal = meatCost + toppingCost + condimentCost;
+let subTotal = decimalate(sandwichCost + meatCost + toppingCost + condimentCost);
 
 // TODO: Calculate the tax owed using the waStateTaxRate.
 let waStateTaxRate = 0.065;
-let orderTax = subtotal * waStateTaxRate;
+let orderTax = decimalate(subTotal * waStateTaxRate);
 
 // TODO: Calculate `totalPrice` by adding `subtotal` and `orderTax`.
-let totalPrice = subtotal + orderTax;
-
+let totalPrice = decimalate(subTotal + orderTax);
 
 // Step Three //////////////////////////////////////////////////////////
 //
@@ -77,17 +86,17 @@ let totalPrice = subtotal + orderTax;
 
 let receiptTemplate = `
     <p>SANDWICH ORDER</p>
-    <p>Bread: ${breadString}</p>
+    <p>Bread: ${bread}</p>
     <p>Meat: ${meatArray}</p>
     <p>Toppings: ${toppingArray}</p>
     <p>Condiments: ${condimentArray}</p>
     <p>---------------------</p>
-    <p class="text-right">Sandwich: ${prices.sandwich}</p>
+    <p class="text-right">Sandwich: $${sandwichCost}</p>
     <p class="text-right">Meat: $${meatCost}</p>
     <p class="text-right">Toppings: $${toppingCost}</p>
     <p class="text-right">Condiments: $${condimentCost}</p>
     <p class="text-right">--------</p>
-    <p class="text-right">Subtotal: $${subtotal}</p>
+    <p class="text-right">Subtotal: $${subTotal}</p>
     <p class="text-right">Tax: $${orderTax}</p>
     <p class="text-right">--------</p>
     <p class="text-right">Total: $${totalPrice}</p>
@@ -98,7 +107,3 @@ let receiptTemplate = `
 //////////////////////////////////////////////////////////////////////
 let receiptText = document.querySelector("#receipt-text");
 receiptText.innerHTML = receiptTemplate;
-
-console.log(meatSstring);
-console.log(totalPrice);
-
