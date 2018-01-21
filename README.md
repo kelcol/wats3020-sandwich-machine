@@ -21,19 +21,17 @@ In general, you must complete all of the tasks spelled out in the `TODO` notes
 in the file `js/main.js` within this repository. You will write your JS code
 in that file, completing every task listed.
 
-* Prompt the user for information according to the tasks defined in `main.js`.
-* Process the input from the user to create useful Arrays, Strings, and other variables.
-* Reference the included `prices` Object in `main.js` to determine the price of the sandwich
-* Insert the order details and calculated price into the provided HTML structure in `index.html`.
+[X] Prompt the user for information according to the tasks defined in `main.js`.    
+[X] Process the input from the user to create useful Arrays, Strings, and other variables.    
+[X] Reference the included `prices` Object in `main.js` to determine the price of the sandwich    
+[X] Insert the order details and calculated price into the provided HTML structure in `index.html`.    
 
 ## Stretch Goals
 
-If the Basic Requirements are easy enough to accmoplish, then you are encouraged
+If the Basic Requirements are easy enough to accomplish, then you are encouraged
 to attempt some more complex tasks, too. These are not spelled out in `main.js`,
 so you will have to figure out how to get them into your code on your own.
 
-* Implement some kind of special deal logic that provides a discount to the user. (First two toppings at X price; 20% discount on toppings if you order more than three toppings,  etc.)
-* Implement a more complex discount that prompts the user with something like: "You've added two toppings, so you qualify for a free third topping! What would you like to add to your sandwich?" or "Would you like to double your meat today?" Be sure to include that additional information in your output of the order and adjust your price according to whatever your discount concept is.
-* Add a line across the bottom of the receipt to say "Suggested Tips" and then calculate the tips for 10%, 15%, and 20% and provide those amounts for the convenience of the customer.
-
-
+[ ] Implement some kind of special deal logic that provides a discount to the user. (First two toppings at X price; 20% discount on toppings if you order more than three toppings,  etc.)    
+[ ] Implement a more complex discount that prompts the user with something like: "You've added two toppings, so you qualify for a free third topping! What would you like to add to your sandwich?" or "Would you like to double your meat today?" Be sure to include that additional information in your output of the order and adjust your price according to whatever your discount concept is.    
+[X] Add a line across the bottom of the receipt to say "Suggested Tips" and then calculate the tips for 10%, 15%, and 20% and provide those amounts for the convenience of the customer.    
